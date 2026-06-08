@@ -15,7 +15,7 @@ namespace MyUtils.Converters
         }
 
         /// <summary>Formats a decimal as USD. E.g. 1234.5 => "$1,234.50"</summary>
-        public static string ToUSD(decimal amount) => amount.ToString("C", System.Globalization.CultureInfo.GetCultureInfo("en-US"));
+        public static string ToUSD(decimal amount) => amount.ToString("C", CultureInfo.GetCultureInfo("en-US"));
 
         /// <summary>Rounds a currency value to 2 decimal places.</summary>
         public static decimal Round(decimal amount) => Math.Round(amount, 2, MidpointRounding.AwayFromZero);

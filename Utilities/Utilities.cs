@@ -127,8 +127,22 @@ public static class EnvironmentHelper
         string.Equals(Environment.GetEnvironmentVariable("ASPNETCORE_ENVIRONMENT"),
                       environmentName, StringComparison.OrdinalIgnoreCase);
 
+    /// <summary>
+    /// Convenience methods for common environment checks. E.g. IsDevelopment() returns true if ASPNETCORE_ENVIRONMENT is "Development".
+    /// </summary>
+    /// <returns>True if the current environment matches the specified environment name.</returns>
     public static bool IsDevelopment() => IsEnvironment("Development");
+
+    /// <summary>
+    /// Returns true if the current environment is "Production". Useful for toggling features or logging in production vs development environments.
+    /// </summary>
+    /// <returns>True if the current environment is "Production".</returns>
     public static bool IsProduction()  => IsEnvironment("Production");
+
+    /// <summary>
+    /// Returns true if the current environment is "Staging". Useful for toggling features or logging in staging vs other environments.
+    /// </summary>
+    /// <returns>True if the current environment is "Staging".</returns>
     public static bool IsStaging()     => IsEnvironment("Staging");
 
     /// <summary>Returns the machine name of the current host.</summary>

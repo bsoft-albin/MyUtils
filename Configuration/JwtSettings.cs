@@ -5,6 +5,9 @@ namespace MyUtils.Configuration;
 /// </summary>
 public class JwtSettings
 {
+    /// <summary>
+    /// Name of the configuration section in appsettings.json to bind to this class.
+    /// </summary>
     public const string SectionName = "JwtSettings";
 
     /// <summary>Secret key for signing tokens. Must be at least 32 characters.</summary>

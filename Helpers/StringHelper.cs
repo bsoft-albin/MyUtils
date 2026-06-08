@@ -87,7 +87,7 @@ public static class StringHelper
         return string.IsNullOrWhiteSpace(value) ? value : new string([.. value.Reverse()]);
     }
 
-    /// <summary>Checks if a string is a palindrome (ignores case & spaces).</summary>
+    /// <summary>Checks if a string is a palindrome (ignores case and spaces).</summary>
     public static bool IsPalindrome(string value)
     {
         if (string.IsNullOrWhiteSpace(value))

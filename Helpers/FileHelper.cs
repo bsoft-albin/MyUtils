@@ -19,6 +19,9 @@ public static class FileHelper
     public static string GetExtension(string filePath) => Path.GetExtension(filePath).TrimStart('.').ToLowerInvariant();
 
     /// <summary>Checks if a file extension matches any of the allowed types.</summary>
+    /// <param name="filePath">The path of the file to check.</param>
+    /// <param name="allowedExtensions">The allowed file extensions.</param>
+    /// <returns>True if the file extension is allowed; otherwise, false.</returns>
     public static bool IsAllowedExtension(string filePath, params string[] allowedExtensions)
     {
         string ext = GetExtension(filePath);
@@ -56,7 +59,10 @@ public static class FileHelper
     /// <summary>Deletes a file if it exists (no exception if missing).</summary>
     public static void DeleteIfExists(string filePath)
     {
-        if (File.Exists(filePath)) File.Delete(filePath);
+        if (File.Exists(filePath))
+        {
+            File.Delete(filePath);
+        }
     }
 
     /// <summary>Generates a unique filename with a timestamp prefix to avoid collisions.</summary>

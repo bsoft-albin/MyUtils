@@ -11,9 +11,13 @@ public static class DateHelper
     public static DateTime NowIST() => TimeZoneInfo.ConvertTimeFromUtc(DateTime.UtcNow, IstZone);
 
     /// <summary>Converts a UTC DateTime to IST.</summary>
+    /// <param name="utcDateTime">The UTC DateTime to convert.</param>
+    /// <returns>The corresponding IST DateTime.</returns>
     public static DateTime ToIST(DateTime utcDateTime) => TimeZoneInfo.ConvertTimeFromUtc(DateTime.SpecifyKind(utcDateTime, DateTimeKind.Utc), IstZone);
 
     /// <summary>Converts IST DateTime to UTC.</summary>
+    /// <param name="istDateTime">The IST DateTime to convert.</param>
+    /// <returns>The corresponding UTC DateTime.</returns>
     public static DateTime ISTToUtc(DateTime istDateTime) => TimeZoneInfo.ConvertTimeToUtc(istDateTime, IstZone);
 
     /// <summary>Calculates the age in years from a birth date.</summary>

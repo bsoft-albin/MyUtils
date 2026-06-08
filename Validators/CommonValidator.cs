@@ -92,7 +92,8 @@ public static partial class CommonValidator
     }
 
     /// <summary>Validates a password by minimum length and optional complexity rules.</summary>
-    public static bool IsStrongPassword(string? password,
+    public static bool IsStrongPassword(
+        string? password,
         int minLength = 8,
         bool requireUppercase = true,
         bool requireDigit = true,
@@ -117,8 +118,10 @@ public static partial class CommonValidator
     }
 
     /// <summary>Checks if a date of birth represents an adult (18+).</summary>
-    public static bool IsAdult(DateTime dateOfBirth) =>
-        DateTime.Today >= dateOfBirth.AddYears(18);
+    public static bool IsAdult(DateTime dateOfBirth)
+    {
+        return DateTime.Today >= dateOfBirth.AddYears(18);
+    }
 
     /// <summary>Validates an IFSC code (Indian bank format).</summary>
     public static bool IsValidIFSC(string? ifsc)
