@@ -25,7 +25,11 @@ public static class DateHelper
     {
         DateTime today = DateTime.Today;
         int age = today.Year - birthDate.Year;
-        if (birthDate.Date > today.AddYears(-age)) age--;
+        if (birthDate.Date > today.AddYears(-age))
+        {
+            age--;
+        }
+
         return age;
     }
 
@@ -65,11 +69,18 @@ public static class DateHelper
     /// <summary>Returns the number of business days between two dates (Mon–Fri).</summary>
     public static int BusinessDaysBetween(DateTime start, DateTime end)
     {
-        if (start > end) (start, end) = (end, start);
+        if (start > end)
+        {
+            (start, end) = (end, start);
+        }
+
         int days = 0;
         for (DateTime d = start; d <= end; d = d.AddDays(1))
         {
-            if (IsWeekday(d)) days++;
+            if (IsWeekday(d))
+            {
+                days++;
+            }
         }
 
         return days;

@@ -11,22 +11,27 @@ public class ApiResponse<T>
     /// Indicates whether the API request was successful. True for success, false for failure.
     /// </summary>
     public bool Success { get; set; }
+
     /// <summary>
     /// A human-readable message providing more details about the response. For successful responses, this can be a confirmation message. For failed responses, this should describe the error or reason for failure.
     /// </summary>
     public string Message { get; set; } = string.Empty;
+
     /// <summary>
     /// The actual data payload of the response. This will be of type T for successful responses, and can be null for failed responses or when there is no data to return.
     /// </summary>
     public T Data { get; set; } = default!;
+
     /// <summary>
     /// The HTTP status code of the response.
     /// </summary>
     public int StatusCode { get; set; }
+
     /// <summary>
     /// A list of error messages, if any.
     /// </summary>
     public List<string> Errors { get; set; } = [];
+
     /// <summary>
     /// The timestamp when the response was created.
     /// </summary>
